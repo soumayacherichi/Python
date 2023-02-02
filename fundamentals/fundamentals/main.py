@@ -19,7 +19,6 @@ class User:
     def logic_member(self):
         if self.is_rewards_member == False:
             self.gold_card_points = 200
-
 soumaya = User("Soumaya", "Cherichi", "Soumayacherichi@gmail.com", 35, True, 120)
 soumaya.display_info()
 soumaya.enroll().display_info()
@@ -27,4 +26,4 @@ soumaya.enroll().display_info().spend_points(10).display_info()
 mohamed = User("Mohamed", "Ouergli","wergli7100@gmail.com",37,True,180)
 mohamed.enroll().display_info().spend_points(80).display_info()
 mohamed.display_info().spend_points(80).display_info().logic_member()
-mohamed.display_info()
+mohamed.display_info() 
