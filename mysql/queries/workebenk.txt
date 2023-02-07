@@ -1,0 +1,9 @@
+SELECT ninja.name
+FROM ninja;
+
+INSERT INTO ninja(name)values('soumaya');
+
+INSERT INTO ninja(name)values('mohamed'),('islem'), ('rym'),('sarah');
+
+DELETE FROM ninja where name='sarah';
+
