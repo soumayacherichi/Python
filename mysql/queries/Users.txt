@@ -1,0 +1,9 @@
+INSERT INTO users (username, email, age) VALUES('soumaya', 's@gmail.com', 35),('Mohamed','m@gmail.com',37),('Hédi','h@gmail.com',70),
+SELECT * FROM users,
+SELECT * FROM users ORDER BY email; 
+SELECT * FROM USERS ORDER BY id DESC;
+UPDATE users SET username='Pancakes' WHERE id=3;
+DELETE FROM users WHERE id=2;
+SELECT * FROM users ORDER by username;
+SELECT * FROM users ORDER by username DESC;
+ 

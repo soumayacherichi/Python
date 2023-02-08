@@ -1,0 +1,11 @@
+SELECT engineer.name
+FROM engineer;
+
+INSERT INTO engineer(name)values('mohamed'),('islem'), ('rym');
+
+SELECT *
+FROM engineer
+ORDER BY DESC;
+
+
+
