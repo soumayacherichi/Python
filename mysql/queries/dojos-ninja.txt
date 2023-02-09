@@ -1,0 +1,13 @@
+INSERT INTO dojos (name) VALUES('Alpha'),('Beta'),('Gamma');
+DELETE FROM dojos WHERE name='Alpha';
+DELETE FROM dojos WHERE name='Beta';
+DELETE FROM dojos WHERE name='Gamma';
+INSERT INTO dojos (name) VALUES('Alpha'),('Beta'),('Gamma');
+INSERT INTO ninjas (dojo_id, first_name, last_name) 
+VALUES (1,'Mohamed','Ouergli'),(1,'Islem','Ouergli'),(1,'Rym','Ouergli');
+INSERT INTO ninjas (dojo_id, first_name, last_name) 
+VALUES (2,'Mariem','Ouergli'),(2,'Nour','Ouergli'),(2,'Mayssa','Ouergli');
+INSERT INTO ninjas (dojo_id, first_name, last_name) 
+VALUES (3,'Mohamed','Zambo'),(3,'Islem','Zambo'),(3,'Rym','Zambo');
+SELECT * FROM ninjas WHERE dojo_id=1;
+SELECT * FROM ninjas WHERE dojo_id=3;
