@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app import DATABASE
 #=============Create a new table with==================
 class User:
     def __init__(self,data_dict):
@@ -26,12 +27,12 @@ class User:
         query = """
         INSERT INTO users (first_name, last_name, email)
         values (%(first_name)s, %(last_name)s, %(email)s)"""
-        return connectToMySQL("user").query_db(query,data_dict)
+        return connectToMySQL(DATABASE).query_db(query,data_dict)
 # ===============Read One User ====================
     @classmethod
     def get_one(cls,data_dict):
         query = "SELECT * FROM users WHERE id = %(id)s;"
-        results= connectToMySQL("user").query_db(query,data_dict)
+        results= connectToMySQL(DATABASE).query_db(query,data_dict)
         print(results)
         if results:
             return cls(results[0])
@@ -40,10 +41,10 @@ class User:
 @classmethod
 def delete_one(cls,data_dict):
     query = "DELETE FROM users WHERE id = %(id)s;"
-    return connectToMySQL("user").query_db(query,data_dict)
+    return connectToMySQL(DATABASE).query_db(query,data_dict)
 # ===============Update One User ====================
 @classmethod
 def update_one(cls,data_dict):
     query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s WHERE id = %(id)s;"
-    return connectToMySQL("user").query_db(query,data_dict)
+    return connectToMySQL(DATABASE).query_db(query,data_dict)
 

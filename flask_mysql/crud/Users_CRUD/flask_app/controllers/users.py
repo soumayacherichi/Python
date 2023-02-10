@@ -34,3 +34,4 @@ def show_user(user_id):
 def clear_session():
     session.clear()
     return redirect("/display")
+
