@@ -1,9 +1,10 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app import DATABASE
 #=============Create a new table with==================
 class Book:
     def __init__(self,data_dict):
         self.id = data_dict['id']
-        self.users_id = data_dict['users_id']
+        self.user_id = data_dict['user_id']
         self.title = data_dict['title']
         self.page = data_dict['page']
         self.created_at = data_dict['created_at']

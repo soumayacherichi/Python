@@ -15,7 +15,7 @@ class User:
     @classmethod
     def get_all(cls):
         query ="SELECT * FROM users;"
-        results=connectToMySQL("user").query_db(query)
+        results=connectToMySQL(DATABASE).query_db(query)
         print (f"Result from database = {results}")
         all_users = []
         for row in results:
@@ -46,5 +46,11 @@ class User:
     @classmethod
     def update_one(cls,data_dict):
         query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s WHERE id = %(id)s;"
-        return connectToMySQL(DATABASE).query_db(query,data_dict)
+        data_dict={
+            'first_name':data_dict['first_name'],
+            'last_name':data_dict['last_name'],
+            'email':data_dict['email'],
+            'id':data_dict['id']
+        }
+        connectToMySQL(DATABASE).query_db(query,data_dict)
 

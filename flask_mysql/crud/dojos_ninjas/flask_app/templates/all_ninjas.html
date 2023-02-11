@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>All ninjas</title>
+</head>
+<body>
+    <table class="table table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Ninja id</th>
+            <th>Dojo id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Age</th>
+            <th>Created_at</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        {% for ninja in all_ninjas %}
+        <tr>
+            <td>{{ninja.id}}</td>
+            <td>{{ninja.dojo_id}}</td>
+            <td>{{ninja.first_name}}</td>
+            <td>{{ninja.last_name}}</td>
+            <td>{{ninja.age}}</td>
+            <td>{{ninja.created_at}}</td>
+            <td>
+                <button class="btn btn-outline-success" type="submit"><a href="/ninjas/{{ninja.id}}/show" >Show</a></button>
+                <button class="btn btn-outline-warning" type="submit"><a href="/ninjas/{{ninja.id}}/edit" >Edit</a></button>
+                <button class="btn btn-outline-danger"  type="submit"><a href="/ninjas/{{ninja.id}}/delete">Delete </a></button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <center>
+        <a class="btn btn-secondary m-2" href="/" target="_blank" role="button">Home</a>
+    </center>
+</body>
+</html>
