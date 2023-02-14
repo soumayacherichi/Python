@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <style>
+      #intro {
+        background-image: url(https://cdn.pixabay.com/photo/2017/05/11/11/15/workplace-2303851_960_720.jpg);
+        height: 100vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/"></a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active"><a class="nav-link" aria-current="page" href="#intro">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">Dojo Tunisia</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank"></a></li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0"><a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank"></a></li>
+            <li class="nav-item me-3 me-lg-0"><a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank"></a></li>
+            <li class="nav-item me-3 me-lg-0"><a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li class="nav-item me-3 me-lg-0"><a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-md-8">                       
+        <!-- {% for message in get_flashed_messages() %} 
+            <p class="text-danger">{{message}}</p>                   
+        {% endfor %} -->
+              <form action="/users/register" method="post" class="bg-white  rounded-5 shadow-5-strong p-5">
+                <!-- First name input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example1">First name</label>
+                  <input type="text" id="form1Example1" class="form-control"  name="first_name"/>
+                  {% for message in get_flashed_messages(category_filter=["first_name"]) %} 
+                  <p class="text-danger">{{message}}</p>                   
+                  {% endfor %}
+                </div>
+                <!-- Last_ name input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example1">Last name</label>
+                  <input type="text" id="form1Example1" class="form-control" name="last_name" />
+                  {% for message in get_flashed_messages(category_filter=["last_name"]) %} 
+                  <p class="text-danger">{{message}}</p>                   
+                  {% endfor %}
+                </div>                
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example1">Email address</label>
+                  <input type="text" id="form1Example1" class="form-control" name="email" />
+                  {% for message in get_flashed_messages(category_filter=["email"]) %} 
+                  <p class="text-danger">{{message}}</p>                   
+                  {% endfor %}
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example2">Password</label>
+                  <input type="password" id="form1Example2" class="form-control" name="password" />
+                  {% for message in get_flashed_messages(category_filter=["password"]) %} 
+                  <p class="text-danger">{{message}}</p>                   
+                  {% endfor %}
+                </div>
+                <!-- Confirm Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example2"> Confirm Password</label>
+                  <input type="password" id="form1Example2" class="form-control" name="confirm_password" />
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </form>
+            </div>
+            <div class="col-xl-5 col-md-8">                       
+        <!-- {% for message in get_flashed_messages() %} 
+            <p class="text-danger">{{message}}</p>                   
+        {% endfor %} -->
+              <form action="/users/login" method="post" class="bg-white  rounded-5 shadow-5-strong p-5">             
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example1">Login</label>
+                  <input type="text" id="form1Example1" class="form-control" name="email" />
+                  {% for message in get_flashed_messages(category_filter=["email"]) %} 
+                  <p class="text-danger">{{message}}</p>                   
+                  {% endfor %}
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form1Example2">Password</label>
+                  <input type="password" id="form1Example2" class="form-control" name="password" />
+                  {% for message in get_flashed_messages(category_filter=["password"]) %} 
+                  <p class="text-danger">{{message}}</p>                   
+                  {% endfor %}
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+</body>
+</html>
