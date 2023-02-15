@@ -8,20 +8,23 @@
     <title>Display</title>
 </head>
 <body>
+    <h2>Submitted Info</h2>
 <table class="table table-striped">
     <thead class="table-dark">
     <tr>
-        <th>Username</th>
+        <th>Name</th>
         <th>Location</th>
         <th>Language</th>
         <th>Comment</th>
     </tr>
     </thead>
     <tr>
-        <td>{{session.username}}</td>
-        <td>{{session.location}}</td>
-        <td>{{session.language}}</td>
-        <td>{{session.comment}}</td>
+        <td>{{logged_dojo.name}}</td>
+        <td>{{logged_dojo.location}}</td>
+        <td>{{logged_dojo.language}}</td>
+        <td>{{logged_dojo.comment}}</td>
     </tr>
+    </table>
+    <button class="btn btn-info"><a href="/"> Go Back </a></button>
 </body>
 </html>
