@@ -5,7 +5,8 @@ from flask_app.models.ninja import Ninja
 
 @app.route('/ninjas/new')
 def add_ninja():
-    return render_template ("new_ninja.html")
+    dojos  = dojo.Dojo.get_all()
+    return render_template ("new_ninja.html", dojos = dojos)
 
 @app.route('/ninjas')
 def all_ninjas():

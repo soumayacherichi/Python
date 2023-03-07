@@ -8,12 +8,20 @@
     <title>Display</title>
 </head>
 <body>
-    {{session}}
-    <h4>Username:{{session.username}}</h4>
-    <h4>location:{{session.location}}</h4>
-    <h4>User language:{{session.language}}</h4>
-    <h4>User comment:{{session.comment}}</h4>
-    <button class="btn btn-warning"><a href="/">Go Back To Form</a></button>
-    <button class="btn btn-danger"><a href="/clear">Delete</a></button>
+<table class="table table-striped">
+    <thead class="table-dark">
+    <tr>
+        <th>Username</th>
+        <th>Location</th>
+        <th>Language</th>
+        <th>Comment</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>{{session.username}}</td>
+        <td>{{session.location}}</td>
+        <td>{{session.language}}</td>
+        <td>{{session.comment}}</td>
+    </tr>
 </body>
 </html>
